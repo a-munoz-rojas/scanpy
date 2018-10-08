@@ -231,10 +231,11 @@ def rank_genes_groups(
                     continue
                 else:
                     mask_rest = groups_masks[ireference]
-            current_group = groups_order[imask]
             mean_rest, var_rest = simple._get_mean_var(X[mask_rest])
             ns_group = ns[imask]  # number of observations in group
             ns_rest = np.where(mask_rest)[0].size  # number of observations in 'rest'
+
+
 
             # Initialize scores and p-values vectors
             scores = np.zeros(n_genes)
